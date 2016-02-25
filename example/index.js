@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom'
-import AceEditor from 'react-ace';
 import brace from 'brace';
+import 'brace/ext/language_tools';
+import AceEditor from 'react-ace';
 
 import 'brace/mode/java';
 import 'brace/mode/javascript';
@@ -46,6 +47,11 @@ render(
     fontSize={14}
     height="6em"
     value={defaultValue}
+    editorOptions={{
+      enableBasicAutocompletion: true,
+      enableSnippets: false,
+      enableLiveAutocompletion: true
+    }}
   />,
   document.getElementById('example2')
 );
