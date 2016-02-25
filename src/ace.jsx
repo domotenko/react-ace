@@ -48,6 +48,7 @@ export default class ReactAce extends Component {
       this.editor[editorProps[i]] = this.props.editorProps[editorProps[i]];
     }
 
+    this.editor.setOptions(this.props.editorOptions);
     this.editor.getSession().setMode(`ace/mode/${mode}`);
     this.editor.setTheme(`ace/theme/${theme}`);
     this.editor.setFontSize(fontSize);
@@ -192,6 +193,7 @@ ReactAce.propTypes = {
   showPrintMargin: PropTypes.bool,
   cursorStart: PropTypes.number,
   editorProps: PropTypes.object,
+  editorOptions: PropTypes.object,
   keyboardHandler: PropTypes.string,
   wrapEnabled: PropTypes.bool,
 };
@@ -216,5 +218,6 @@ ReactAce.defaultProps = {
   tabSize: 4,
   cursorStart: 1,
   editorProps: {},
+  editorOptions: {},
   wrapEnabled: false,
 };
